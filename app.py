@@ -56,8 +56,6 @@ except:
     db.create_all()
     print("table is created")
 
-
-
 @app.route('/', methods = ['GET'])
 @login_required
 def index():
