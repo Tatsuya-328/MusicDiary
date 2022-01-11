@@ -49,12 +49,15 @@ db.init_app(app)
 db.app = app
 
 # heroku用に追加。サイト起動時にテーブルがある状態だとdb.createできない、とエラー起こすため。
-try:
-    db.session.query(users.nickname).all
-    print("table is already created")
-except:
-    db.create_all()
-    print("table is created")
+# try:
+#     db.session.query(users.nickname).all
+#     print("table is already created")
+# except:
+#     db.create_all()
+#     print("table is created")
+
+db.create_all()
+print("table is created")
 
 @app.route('/', methods = ['GET'])
 @login_required
