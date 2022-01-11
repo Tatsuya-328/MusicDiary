@@ -48,6 +48,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 db.app = app
 
+# heroku用に追加。サイト起動時にテーブルがある状態だとdb.createできない、とエラー起こすため。
 try:
     db.session.query(users.nickname).filter(users.id == "1").first()
     print("table is already created")
