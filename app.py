@@ -48,8 +48,14 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 db.app = app
 
-db.create_all()
-print("table is created")
+try:
+    db.session.query(users.nickname).filter(users.id == "1").first()
+    print("table is already created")
+except:
+    db.create_all()
+    print("table is created")
+
+
 
 @app.route('/', methods = ['GET'])
 @login_required
