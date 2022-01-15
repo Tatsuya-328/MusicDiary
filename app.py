@@ -43,7 +43,7 @@ app.secret_key = 'SOMETHING-RANDOM'
 app.config['SESSION_COOKIE_NAME'] = 'session-id'
 
 #database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://nimobrfvcaeqmw:90c6801df409a1876669910ee1c6d8e41a4fc6cc180aaccbe97863b780958b11@ec2-18-234-17-166.compute-1.amazonaws.com:5432/duo6a8u4rk6ri' or 'sqlite:///database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://nimobrfvcaeqmw:90c6801df409a1876669910ee1c6d8e41a4fc6cc180aaccbe97863b780958b11@ec2-18-234-17-166.compute-1.amazonaws.com:5432/duo6a8u4rk6ri' or 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 db.app = app
